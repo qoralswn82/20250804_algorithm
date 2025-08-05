@@ -10,19 +10,15 @@ public class AnalysisString {
         String str = "";
         while((str=br.readLine())!==null){
             int lower = 0, upper = 0, number = 0, space = 0;
-            for(int i = 0; i < str.length(); i++) {
-                int ch = str.charAt(i);
-                if(97 <= ch && ch <= 122) {
-                    lower += 1;
-                }else if(65 <= ch && ch <= 90) {
-                    upper += 1;
-                }else if(48 <= ch && ch <= 57) {
-                    number += 1;
-                }else if(ch == 32) {
-                    space += 1;
-                }
+            // java Character 클래스의 메소드를 사용하여 손쉽게 문자열 구분 사용
+            for (char ch : input.toCharArray()) {
+                if (Character.isLowerCase(ch)) lower++;
+                else if (Character.isUpperCase(ch)) upper++;
+                else if (Character.isDigit(ch)) digit++;
+                else if (ch == ' ') space++;
             }
-            System.out.println(lower+" "+upper+" "+number+" "+space);
+            // 표준 출력 포맷팅 
+            System.out.printf("%d %d %d %d%n", lower, upper, digit, space);
         }
     }
 }
