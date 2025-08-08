@@ -10,32 +10,19 @@ public class SortStr {
         }
         
         List<String> words = new ArrayList<>(set);
-
-      for (int i = 0; i < words.length - 1; i++) {
-            for (int j = 0; j < words.length - i - 1; j++) {
-                if (compare(words[j], words[j + 1]) > 0) {
-                    // swap
-                    String tmp = words[j];
-                    words[j] = words[j + 1];
-                    words[j + 1] = tmp;
-                }
+        //기본 util Collections 정렬 기능 사용
+      Collections.sort(words, (a, b) -> {
+            if (a.length() != b.length()) {
+                return a.length() - b.length();
             }
-        }
-
-      // 출력
+            return a.compareTo(b);
+        });
+        
         for (String word : words) {
             System.out.println(word);
-        } 
+        }
         
         
     }
 
-  // 비교 함수: 길이 우선, 그다음 사전순
-    private static int compare(String a, String b) {
-        if (a.length() != b.length()) {
-            return a.length() - b.length();
-        } else {
-            return a.compareTo(b);
-        }
-    }
 }
