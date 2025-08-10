@@ -19,18 +19,14 @@ public class Solution {
         // 파일 이름 입력 및 검사
         for (int i = 0; i < num; i++) {
             String file = br.readLine();
-
-            // 길이가 prefix+suffix보다 짧으면 무조건 불일치
-            if (file.length() < prefixLen + suffixLen) {
+            //String 메소드의 활용을 통해 접두사, 접미사의 확인 진행
+           if (fileName.length() >= prefix.length() + suffix.length() &&
+                fileName.startsWith(prefix) &&
+                fileName.endsWith(suffix)) {
+                System.out.println("DA");
+            } else {
                 System.out.println("NE");
-                continue;
             }
-
-            // 앞/뒤 비교
-            boolean matchFront = file.startsWith(prefix);
-            boolean matchBack = file.endsWith(suffix);
-
-            System.out.println(matchFront && matchBack ? "DA" : "NE");
         }
     }
 }
