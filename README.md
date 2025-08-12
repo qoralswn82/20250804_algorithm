@@ -10,7 +10,7 @@
 
 ## 📅 최근 TIL 목록
 
-
+- [2025-08-12] [평행선](https://velog.io/@100bona/평행선)
 - [2025-08-11] [점화식-피보나치](https://velog.io/@100bona/Climbing-Stairs)
 - [2025-08-10] [문자열의 패턴](https://velog.io/@100bona/문자열의-패턴)
 - [2025-08-08] [단어정렬](https://velog.io/@100bona/단어정렬)
